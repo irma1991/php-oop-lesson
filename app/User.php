@@ -2,30 +2,16 @@
 
 namespace OOP;
 
-class User
+abstract class User
 {
     protected $name;
     protected $email;
     protected $phone;
     protected $comment;
 
-    public function __construct($name, $email, $phone)
-    {
-        $this->name = $name;
-        $this->email = $email;
-        $this->phone = $phone;
-    }
+    // abstraktus metodai, juos butina realizuoti child klasese
+    abstract public function __construct($name, $email, $phone);
+    abstract public function getProfile();
+    abstract public function setComment($comment);
 
-    public function getProfile(){
-        $data[] = $this->name;
-        $data[] = $this->email;
-        $data[] = $this->phone;
-        $data[] = $this->comment;
-
-        return $data;
-    }
-
-    public function setComment($comment){
-        $this->comment = $comment;
-    }
 }
